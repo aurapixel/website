@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuraPixel - Boost Your Productivity</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +20,7 @@
                 </a>
             </div>
             <ul>
+                <li><a href="#products">Products</a></li>
                 <li><a href="#philosophy">Our Philosophy</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
@@ -30,9 +34,27 @@
 
     <main>
         <section class="hero">
-            <h1>Crafting Digital Solutions for Modern Challenges</h1>
-            <p>We build innovative SaaS products to enhance productivity and streamline workflows.</p>
-            <a href="#philosophy" class="cta-button">Learn More</a>
+            <h1>Your new AI-powered workspace.</h1>
+            <p>We build beautiful and simple software to enhance productivity and streamline workflows.</p>
+            <a href="#products" class="cta-button">Explore Products</a>
+        </section>
+
+        <section id="products" class="products-section">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-icon">📚</div>
+                    <h3>Prompt Book</h3>
+                    <p>Organize, discover, and master AI prompts with our powerful browser extension.</p>
+                    <a href="products/prompt-book.html" class="cta-button">Learn More</a>
+                </div>
+                <div class="product-card coming-soon">
+                    <div class="product-icon">🚀</div>
+                    <h3>Coming Soon</h3>
+                    <p>We're working on more amazing tools to boost your productivity.</p>
+                    <button class="cta-button" disabled>Coming Soon</button>
+                </div>
+            </div>
         </section>
 
         <section id="philosophy" class="features">

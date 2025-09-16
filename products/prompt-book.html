@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Book - AI Prompt Management Assistant | AuraPixel</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .product-hero {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: var(--text-color);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: var(--text-color);
+        }
+        
+        .pricing-tiers {
+            display: flex;
+            gap: 2rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .pricing-tier {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .pricing-tier:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-tier.featured {
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--button-text-color);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--button-text-color);
+            padding: 0.8rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            text-decoration: none;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: var(--text-color);
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #10b981;
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-tiers {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-tier {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assets/aurapixel-logo-80px.png" alt="AuraPixel Logo">
+                    <span class="business-name">AuraPixel</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="../index.html#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-hero">
+            <div class="product-container">
+                <h1>Prompt Book</h1>
+                <p class="subtitle">Your AI Prompt Command Center</p>
+                <p>Privacy-first browser extension to store, organize, and instantly inject your best prompts into any AI chatbot — built for speed, consistency, and control across ChatGPT, Claude, Gemini, Copilot, and more.</p>
+                <a href="#pricing" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <section class="product-container">
+            <h2>Why Prompt Book</h2>
+            <ul class="feature-list">
+                <li>Save time by reusing proven prompts instead of rewriting them.</li>
+                <li>Keep your best prompts at your fingertips—organized, searchable, and ready to inject in one click.</li>
+                <li>Maintain consistent output quality across tools and sessions.</li>
+                <li>Back up and restore your prompt library with confidence.</li>
+            </ul>
+        </section>
+
+        <section id="pricing" class="product-container">
+            <h2>Plans & Pricing</h2>
+            <p>Choose the plan that fits your workflow</p>
+
+            <div class="pricing-tiers">
+                <div class="pricing-tier">
+                    <h3>Free</h3>
+                    <div class="price">$0<span class="price-period">/forever</span></div>
+                    <p>Get started with the essentials</p>
+                    <ul class="feature-list">
+                        <li>Prompt library: add/edit/delete</li>
+                        <li>Search and quick input</li>
+                        <li>Basic folders and tags</li>
+                        <li>Core UI and quick filters</li>
+                        <li>Local storage</li>
+                        <li>Sorting (alphabetical/date/frequency) in-session</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="background: var(--border-color); color: var(--text-color);">Get Started</a>
+                </div>
+
+                <div class="pricing-tier featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Premium Monthly</h3>
+                    <div class="price">$4.99<span class="price-period">/month</span></div>
+                    <p>Unlock full power and cloud features</p>
+                    <ul class="feature-list">
+                        <li>Everything in Free</li>
+                        <li>Usage count enabled</li>
+                        <li>Custom folder ordering persistence</li>
+                        <li>Data export (JSON/CSV)</li>
+                        <li>Google Drive backup + restore</li>
+                        <li>Cloud settings sync (login, daily scheduled sync)</li>
+                        <li>Priority updates and support</li>
+                    </ul>
+                    <a href="#" class="cta-button">Start Free Trial</a>
+                </div>
+
+                <div class="pricing-tier">
+                    <h3>Premium Lifetime</h3>
+                    <div class="price">$39<span class="price-period">/one-time</span></div>
+                    <p>Best value for power users</p>
+                    <ul class="feature-list">
+                        <li>All Premium Monthly features</li>
+                        <li>One-time payment</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="background: #9ca3af;">Buy Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="product-container">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Prompt Library</h3>
+                    <p>Add, edit, delete prompts with titles and full content. Organize with folders, tags, and colors. Usage tracking per prompt.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Lightning-Fast Retrieval</h3>
+                    <p>Smart search across titles and content. One-click injection into chat inputs. Floating icon overlay on supported sites.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Sorting & Filtering</h3>
+                    <p>Sort by Alphabetical, Date, or Frequency (Asc/Desc). Quick filters and folder filtering. Custom folder ordering.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Data Portability</h3>
+                    <p>Import/Export backups in JSON (full-fidelity with metadata). CSV support where applicable.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Cloud & Backup</h3>
+                    <p>Google Drive backup/restore, sync status and last sync time, settings sync with account, daily scheduled sync.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>UI & Experience</h3>
+                    <p>Clean, responsive Svelte-powered UI with vertical tabs for Account, Data, About, Help. Toasts and progress feedback.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Privacy & Security</h3>
+                    <p>Local-first storage. Granular permissions. OAuth scopes limited to profile and Drive where used. Transparent host permissions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="product-container">
+            <h2>How It Works</h2>
+            <ul class="feature-list">
+                <li><strong>Store & Organize:</strong> Save prompts with titles and folder association. Persistent folder IDs and custom ordering via preferences.</li>
+                <li><strong>Find & Use:</strong> Type to filter; fast derived search composes search + folder + sort. Click “Use” to inject into chat inputs.</li>
+                <li><strong>Back Up & Restore:</strong> Export/import your library. Google Drive integration with last sync tracking.</li>
+                <li><strong>Stay in Sync (Premium):</strong> Firestore-based profile and settings sync; auto-create profile on first login; daily scheduled sync at 14:00.</li>
+            </ul>
+        </section>
+
+        <section id="supported" class="product-container">
+            <h2>Supported Websites</h2>
+            <ul class="feature-list">
+                <li>ChatGPT (chat.openai.com, chatgpt.com)</li>
+                <li>Claude (claude.ai)</li>
+                <li>Google Gemini/Bard (gemini.google.com, bard.google.com)</li>
+                <li>Microsoft Copilot (copilot.microsoft.com)</li>
+                <li>You.com, Poe, Character.AI, Hugging Face, Perplexity</li>
+                <li>Works on most sites with a standard text input</li>
+            </ul>
+        </section>
+
+        <section id="value" class="product-container">
+            <h2>Value Propositions</h2>
+            <ul class="feature-list">
+                <li><strong>Save Time:</strong> One-click insertion and fast search reduce repetitive typing and context-switching.</li>
+                <li><strong>Improve Consistency:</strong> Reuse vetted prompts; maintain uniform quality across tools and sessions.</li>
+                <li><strong>Own Your Data:</strong> Local-first storage with exportable backups (JSON/CSV) and optional Google Drive backups.</li>
+                <li><strong>Peace of Mind:</strong> Clear sync status, last sync timestamps, and detailed error handling.</li>
+                <li><strong>Seamless Experience:</strong> Lightweight, responsive UI powered by Svelte 5.</li>
+            </ul>
+        </section>
+
+        <section id="audience" class="product-container">
+            <h2>Who It’s For</h2>
+            <ul class="feature-list">
+                <li><strong>Creators & Researchers:</strong> Curate prompts for analysis, brainstorming, and content generation.</li>
+                <li><strong>Developers & Analysts:</strong> Standardize prompts for code review, refactoring, and data tasks.</li>
+                <li><strong>Teams & Consultants:</strong> Shareable backups and consistent prompt patterns across clients and projects.</li>
+            </ul>
+        </section>
+
+        <section id="roadmap" class="product-container">
+            <h2>Roadmap Highlights</h2>
+            <ul class="feature-list">
+                <li>Team sharing and collaboration options</li>
+                <li>Advanced templates with variables and dynamic fields</li>
+                <li>More integrations and site-specific enhancements</li>
+                <li>Automated periodic Google Drive backups</li>
+            </ul>
+        </section>
+
+        <section id="get-started" class="product-container" style="text-align: center;">
+            <h2>Get Started</h2>
+            <p style="max-width: 800px; margin: 0 auto 1rem;">Install the extension from your preferred store, create your first folders and prompts, and upgrade to Premium to unlock backups, exports, sync, and power features.</p>
+            <p style="color:#6b7280;">Tech stack: WXT, Svelte 5, TypeScript, Firebase, Google APIs</p>
+            <a href="#pricing" class="cta-button" style="font-size: 1.1rem; padding: 0.9rem 1.6rem;">View Plans</a>
+        </section>
+
+        <section id="cta" class="product-container" style="text-align: center; padding: 4rem 0;">
+            <h2>Ready to Transform Your AI Workflow?</h2>
+            <p>Join thousands of users who are already boosting their productivity with Prompt Book.</p>
+            <a href="#pricing" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">Get Prompt Book Now</a>
+        </section>
+
+        <section id="contact" class="contact" style="background: #f9fafb; margin-top: 4rem; padding: 4rem 0;">
+            <div class="product-container">
+                <h2>Have Questions?</h2>
+                <p>Contact our support team at <a href="mailto:support@aurapixel.dev">support@aurapixel.dev</a> or join our community forum.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AuraPixel. All rights reserved.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../theme.js"></script>
+</body>
+</html>
