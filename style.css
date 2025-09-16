@@ -1,15 +1,37 @@
+/* Theme Variables */
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --header-bg: #1e1e1e;
+    --border-color: #333;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --link-color: #00aaff;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #f8f9fa;
+    --border-color: #e0e0e0;
+    --card-bg: #f8f9fa;
+    --card-border: #e0e0e0;
+    --link-color: #007bff;
+}
+
 /* General Styles */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-    color: #00aaff;
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -19,9 +41,9 @@ a:hover {
 
 /* Header */
 header {
-    background-color: #1e1e1e;
+    background-color: var(--header-bg);
     padding: 1rem 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -67,6 +89,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 1.5rem;
     margin: 0;
     padding: 0;
@@ -127,10 +150,10 @@ main {
 }
 
 .feature-item {
-    background-color: #1e1e1e;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid #333;
+    border: 1px solid var(--card-border);
     text-align: center;
 }
 
@@ -151,10 +174,34 @@ main {
 }
 
 /* Footer */
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--card-bg);
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem 0;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
     margin-top: 2rem;
 }
 
